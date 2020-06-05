@@ -1,20 +1,22 @@
 const longest = (list) => {
-    let max = list[0]
-    let output = [max]
+    let longest = list[0]
+    let output = [longest]
     for (let x = 1; x < list.length; x++) {
-        if (list[x].length == max.length) {
+
+        if (list[x].length >= longest.length) {
             output.push(list[x])
-        }
-        if (list[x].length > max.length) {
-            output.push(list[x])
-            delete output[output.findIndex(max)]
-            max = list[x]
+            if (list[x].length != longest.length) {
+                delete output[output.indexOf(longest)]
+            }
+            longest = list[x]
         }
     }
 
     for (let x = 0; x < output.length; x++) {
-        console.log(output[x])
+        if (output[x] != undefined) {
+            console.log(output[x])
+        }
     }
 }
 
-longest(["the","quick","brown", "fox", "ate", "my", "chickens"])
+longest(["the", "quick", "bro", "fox", "ate", "my", "chickenss", "highestih"])
