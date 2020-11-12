@@ -8,4 +8,4 @@ const square = (l)=>{
         }
 }
 
-square(8)
+square(4)
